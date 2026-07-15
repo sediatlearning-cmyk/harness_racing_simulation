@@ -38,6 +38,7 @@ if __name__ == "__main__":
         choice = input("Vous vous êtes trompés, veuillez réessayer : ")
 
         while choice == "O":
+            choose_number_of_horses_and_shuffle_them()
             choice = input("Voulez-vous rejouer? (O ou N) : ")
 
     print("Nous vous remercions d'avoir jouer dans notre hippodrome. A bientôt ! ")
