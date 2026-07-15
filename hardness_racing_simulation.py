@@ -64,6 +64,12 @@ def choose_number_of_horses_and_shuffle_them():
     return list_of_horses
 
 
+def result_calculated():
+
+    list_of_horses = choose_number_of_horses_and_shuffle_them()
+
+    choose_the_type_of_race(list_of_horses)
+
 # ==============================================================
 #                           main
 # ==============================================================
@@ -78,8 +84,7 @@ if __name__ == "__main__":
         choice = input(INVALID_INPUT_MESSAGE)
 
         while choice == "O":
-            choose_number_of_horses_and_shuffle_them()
-            choose_the_type_of_race(horses_list)
+            result_calculated()
             choice = input("Voulez-vous rejouer? (O ou N) : ")
 
     print("Nous vous remercions d'avoir jouer dans notre hippodrome. A bientôt ! ")
