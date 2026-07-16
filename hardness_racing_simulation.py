@@ -3,18 +3,29 @@ import random
 # =======================================================================
 #                               variables
 # =======================================================================
+evolution_horse_speed = [["0 ", "1 ", "1", "1", "2", "2 "],
+                         ["0 ", "0 ", "1", "1", "1", "2 "],
+                         ["0 ", "0 ", "1", "1", "1", "2 "],
+                         ["-1", "0 ", "0", "1", "1", "1 "],
+                         ["-1", "0 ", "0", "0", "1", "1 "],
+                         ["-2", "-1", "0", "0", "0", "1 "],
+                         ["-2", "-1", "0", "0", "0", "DQ"]]
+
+distance_by_speed = [["0", "23", "46", "69", "92", "115", "138"]]
 
 horses_list = []
 horses = []
 ARTICLE = ", le "
 INVALID_INPUT_MESSAGE = "Vous vous êtes trompés, veuillez réessayer : "
-speed: int = 0
-new_speed: int = 0
-distance_traveled: int = 0
+current_speed: str = "0"
+distance_traveled: str = "0"
 disqualification: bool = False
 arrival: bool = False
-horse: dict = {'speed': speed, 'distance_traveled': distance_traveled,
-               'disqualification': disqualification, 'arrival': arrival}
+horse: dict = {'speed': current_speed,
+               'distance_traveled': distance_traveled,
+               'disqualification': disqualification,
+               'arrival': arrival
+               }
 turn_number: int = 0    # chaque tour sera de 10 secondes
 
 # =======================================================================
@@ -98,6 +109,25 @@ Méthode de création d'un dé à 6 faces
 def throw_dice():
     dice = random.randint(1, 6)
     return dice
+
+
+"""
+methode qui traite le calcul de la distance parcourue en fonction du jet de dé pour un cheval
+
+
+"""
+
+
+def calcul_of_the_distance_traveled(one_horse, tab_evolution_horse_speed):
+    new_speed = throw_dice()
+
+    evolution_speed = tab_evolution_horse_speed[one_horse['speed']][new_speed]
+    one_horse['speed'] = new_speed
+    # TODO : transformer la distance par vitesse en int
+    # TODO : faire le calcul de la distance parcourus
+    # TODO : Remettre la valeur de la distance parcourus en str pour l'enregistrer dans le cheval
+    one_horse['distance_traveled'] = distance_by_speed[evolution_speed]
+    return distance_by_speed[evolution_speed]
 
 
 """
