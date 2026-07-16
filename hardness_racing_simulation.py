@@ -15,6 +15,8 @@ disqualification: bool = False
 arrival: bool = False
 horse: dict = {'speed': speed, 'distance_traveled': distance_traveled,
                'disqualification': disqualification, 'arrival': arrival}
+turn_number: int = 0    # chaque tour sera de 10 secondes
+
 # =======================================================================
 #                                methods
 # =======================================================================
@@ -84,6 +86,9 @@ def choose_number_of_horses_and_shuffle_them():
     list_of_horses = list(range(1, horses_number + 1))
     random.shuffle(list_of_horses)
     return list_of_horses
+
+
+
 
 
 """
