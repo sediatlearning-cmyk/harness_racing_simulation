@@ -12,6 +12,13 @@ INVALID_INPUT_MESSAGE = "Vous vous êtes trompés, veuillez réessayer : "
 #                                methods
 # =======================================================================
 
+"""
+methode qui traite le type de course (Tiercé, Quarté ou Quinté) en fonction du choix de l'utilisateur
+
+:param horses_list: list_of_horses qui recupere la liste des chevaux
+:return: horses_racing_prediction renvoie le choix du type de course par l'utilisateur
+"""
+
 
 def choose_the_type_of_race(list_of_horses):
     print("Choisissez votre genre de course.")
@@ -52,6 +59,14 @@ def choose_the_type_of_race(list_of_horses):
                   ARTICLE + str(list_of_winners_horses[3]) + " , le " + str(list_of_winners_horses[4]))
 
 
+"""
+méthode qui traite le nombre de chevaux choisis par l'utilisateur et qui les mélange 
+afin qu'il soit dans un ordre aléatoire
+
+:return: list_of_horses renvoie une liste avec l'ordre des chevaux préalablement mélangé 
+"""
+
+
 def choose_number_of_horses_and_shuffle_them():
     horses_number = int(input("Indiquez le nombre de chevaux que vous souhaitez voir courir "
                               ": (entre 12 et 20 chevaux) : "))
@@ -62,6 +77,12 @@ def choose_number_of_horses_and_shuffle_them():
     list_of_horses = list(range(1, horses_number + 1))
     random.shuffle(list_of_horses)
     return list_of_horses
+
+
+"""
+Méthode qui traite l'ensemble des méthodes dans un ordre définis afin 
+d'obtenir les résultats d'arrivées des chevaux par le type de course choisi 
+"""
 
 
 def result_calculated():
