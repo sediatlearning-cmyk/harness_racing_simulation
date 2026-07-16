@@ -88,7 +88,16 @@ def choose_number_of_horses_and_shuffle_them():
     return list_of_horses
 
 
+"""
+Méthode de création d'un dé à 6 faces
 
+:return: dice renvoie le résultat aléatoire du dé à 6 faces
+"""
+
+
+def throw_dice():
+    dice = random.randint(1, 6)
+    return dice
 
 
 """
