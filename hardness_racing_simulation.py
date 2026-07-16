@@ -8,6 +8,13 @@ horses_list = []
 horses = []
 ARTICLE = ", le "
 INVALID_INPUT_MESSAGE = "Vous vous êtes trompés, veuillez réessayer : "
+speed: int = 0
+new_speed: int = 0
+distance_traveled: int = 0
+disqualification: bool = False
+arrival: bool = False
+horse: dict = {'speed': speed, 'distance_traveled': distance_traveled,
+               'disqualification': disqualification, 'arrival': arrival}
 # =======================================================================
 #                                methods
 # =======================================================================
